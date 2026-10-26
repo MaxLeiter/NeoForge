@@ -63,6 +63,10 @@ junitTest {
     outputs.upToDateWhen { false }
     exclude("**/mixin/**")
     systemProperty "neoforge.fuzzInputs", file("src/junit/fuzz-inputs").absolutePath
+    if (providers.environmentVariable("JAZZER_FUZZ").isPresent()) {
+        // By default Jazzer only collects coverage for the test's own package
+        systemProperty "jazzer.instrumentation_includes", "net.minecraft.**:net.neoforged.neoforge.**:com.mojang.**"
+    }
 }
 
 neoDev {
