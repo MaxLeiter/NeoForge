@@ -62,6 +62,7 @@ junitTest {
     testClassesDirs = sourceSets.junit.output.classesDirs
     outputs.upToDateWhen { false }
     exclude("**/mixin/**")
+    systemProperty "neoforge.fuzzInputs", file("src/junit/fuzz-inputs").absolutePath
 }
 
 neoDev {
