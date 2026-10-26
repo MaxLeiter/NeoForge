@@ -34,6 +34,7 @@ dependencies {
 
     junitImplementation("org.assertj:assertj-core:${project.assertj_core}")
     junitImplementation("org.mockito:mockito-core:${project.mockito_version}")
+    junitImplementation "com.code-intelligence:jazzer-junit:${project.jazzer_version}"
     junitImplementation "net.neoforged.fancymodloader:junit-fml:${project.fancy_mod_loader_version}"
     junitImplementation(project(':neoforge')) {
         capabilities {
